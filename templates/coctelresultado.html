@@ -1,0 +1,28 @@
+{% extends "about.html" %}
+{% block contenido1 %}
+    <h2>Coincidencias con {{ palabra }}</h2>
+{% endblock %}
+
+{% block contenido2 %}
+<section class="our_offer single_page_offer">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+                <div class="section_tittle">
+                    <h2>Resultados</h2>
+                            {% for i in listabusqueda %}
+                            <div class="single_offer_part">
+                                <div class="single_offer">
+                                    <img src="{{ i['strDrinkThumb'] }}" alt="offer_img_1">
+                                    <div class="hover_text">
+                                        <h2>{{ i['strDrink'] }}</h2>
+                                        <a href="/coctel/{{ i['idDrink'] }}" class="offer_btn"><span class="flaticon-slim-right"></span></a>
+                                    </div>
+                                </div>
+                            </div>  
+                            {% endfor %}                        
+                        
+                            </div>
+                    </div>
+                </div>
+        </section>
+{% endblock%}

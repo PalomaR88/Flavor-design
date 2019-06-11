@@ -1,0 +1,54 @@
+{% extends "about.html" %}
+{% block contenido1 %}
+<h2>Cervezas</h2>
+{% endblock %}
+
+{% block contenido2 %}
+
+<section class="our_offer single_page_offer">
+        <section class="sibscribe-area section_padding">
+                <div class="row justify-content-center">
+                        <div class="sibscribe-text text-center">
+                        <h1>Cervezas</h1>
+                        <p>Introduzca el nombre de la cerveza, o parte de él, para facilitar la búsqueda</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <form action="/cerveza" method="post">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <input type="text" name="nombre" placeholder='Buscar coctel' class="form-control" required/>
+                                </div>
+                            </div>
+                            <div class="input-group-append">
+                                <input class="button rounded-0 primary-bg text-white w-100 btn_2" type="submit" value="Enviar" /></div>
+                        </form> 
+                        {% block resultados %}
+                        {% endblock %}  
+                    </div>
+                </div>      
+            </div>
+        </section>
+
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                    <div class="section_tittle">
+                                {% for i in listabusqueda %}
+                                <div class="single_offer_part">
+                                    <div class="single_offer">
+                                        <img src="{{ i['strDrinkThumb'] }}" alt="offer_img_1">
+                                        <div class="hover_text">
+                                            <h2>{{ i['strDrink'] }}</h2>
+                                            <a href="/coctel/{{ i['idDrink'] }}" class="offer_btn"><span class="flaticon-slim-right"></span></a>
+                                        </div>
+                                    </div>
+                                </div>  
+                                {% endfor %}                        
+                    
+                        </div>
+                </div>
+            </div>
+    </section>
+{% endblock %}

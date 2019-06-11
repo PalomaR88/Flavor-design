@@ -1,0 +1,15 @@
+{% extends "ingredientes.html" %}
+{% block resultados %}
+<div class="row justify-content-center">
+        <div class="sibscribe-text text-center">
+            <div class="blog_details">
+                <h1>Resultados </h1>
+                    {% for i in resultados %}
+                        <a class="d-inline-block" href="/ingredientes/{{ i }}">
+                            <h2>- {{ i }} </h2>
+                        </a> 
+                    {% endfor %}               
+            </div>
+        </div>
+    </div>
+{% endblock %}

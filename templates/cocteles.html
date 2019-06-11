@@ -1,0 +1,62 @@
+{% extends "about.html" %}
+{% block contenido1 %}
+    <h2>Cócteles</h2>
+{% endblock %}
+
+{% block contenido2 %}
+    
+    <section class="blog_area section_padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mb-5 mb-lg-0">
+                        <div class="blog_left_sidebar">
+                            {% for i in cocrandom %} 
+                            <article class="blog_item">
+                                <div class="blog_item_img">
+                                    <img class="card-img rounded-0" src="img/blog/single_blog_1.png" alt="">
+                                    <a href="#" class="blog_item_date">  
+                                        <h3>{{ i[0]['strMeasure1'] }}</h3>
+                                        <p>{{ i[0]['dateModified'][5] }}{{ i[0]['dateModified'][6] }}/{{ i[0]['dateModified'][8] }}{{ i[0]['dateModified'][9] }}/{{ i[0]['dateModified'][2] }}{{ i[0]['dateModified'][3] }}</p>
+                                    </a>
+                                </div>
+    
+                                <div class="blog_details">
+                                    <a class="d-inline-block" href="single-blog.html">
+                                        <h2>{{ i[0]['strDrink'] }}</h2>
+                                    </a>
+                                    <p>{{ i[0]['strInstructions'] }}</p>
+                                    <ul class="blog-info-link">
+                                        <li><a href="#">{{ i[0]['strGlass'] }}</a></li>
+                                        <li><a href="#">{{ i[0]['strAlcoholic'] }}</a></li>
+                                    </ul>
+                                </div>
+                            </article>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="blog_right_sidebar">    
+                            <aside class="single_sidebar_widget post_category_widget">
+                                <h4 class="widget_title">Categorias</h4>
+                                    <ul class="list cat-list">
+                                    {% for i in coc %}
+                                        <li>
+                                            <div class="media post_item">
+                                                    <div class="media-body">
+                                                        <a href="single-blog.html">
+                                                            <h3>{{ i['strCategory'] }}</h3>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+                        
+
+{% endblock %}

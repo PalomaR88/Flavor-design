@@ -1,0 +1,114 @@
+{% extends "about.html" %}
+{% block contenido1 %}
+    <h2>Ingredientes</h2>
+{% endblock %}
+
+{% block contenido2 %}
+
+
+
+<section class="sibscribe-area section_padding">
+        <div class="row justify-content-center">
+                <div class="sibscribe-text text-center">
+                <h1>Buscar Ingrediente</h1>
+                <p>Introduzca un ingrediente, o parte de él, para facilitar la búsqueda</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <form action="/ingredientes" method="post">
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <input type="text" name="ingrediente" placeholder='Buscar ingrediente' class="form-control" required/>
+                        </div>
+                    </div>
+                    <div class="input-group-append">
+                        <input class="button rounded-0 primary-bg text-white w-100 btn_2" type="submit" value="Enviar" /></div>
+                </form> 
+
+            </div>
+        </div>
+        {% block resultados %}
+        {% endblock %}        
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mb-5 mb-lg-0">
+                <div class="row justify-content-center">
+                    <div class="sibscribe-text text-center">
+                        <div class="blog_details">
+                            <h1>Ingredientes disponibles </h1>
+                                {% for i in listaing %}	
+                                    <a class="d-inline-block" href="/ingredientes/{{ i[0] }}"><h2>{{ i[0] }} - </h2></a> 
+                                    <a class="d-inline-block" href="/ingredientes/{{ i[1] }}"><h2>{{ i[1] }} - </h2></a>
+                                    <a class="d-inline-block" href="/ingredientes/{{ i[2] }}"><h2>{{ i[2] }} - </h2></a>
+                                    <a class="d-inline-block" href="/ingredientes/{{ i[3] }}"><h2>{{ i[3] }} - </h2></a>
+                                    <a class="d-inline-block" href="/ingredientes/{{ i[4] }}"><h2>{{ i[4] }} - </h2></a>
+                                    <a class="d-inline-block" href="/ingredientes/{{ i[5] }}"><h2>{{ i[5] }}</h2></a>
+                                {% endfor %}               
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog_right_sidebar">
+                    <aside class="single_sidebar_widget search_widget">
+                            <h1> 
+                    </aside>
+                    <aside class="single_sidebar_widget search_widget">
+                            <form action="/busqueda" method='POST'>
+                               <div class="form-group">
+                                  <div class="input-group mb-3">
+                                     <input type="text" name="coctel" class="form-control" placeholder='Buscar coctel'
+                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
+                                     <div class="input-group-append">
+                                        <button class="btn" type="button"><i class="ti-search"></i></button>
+                                     </div>
+                                  </div>
+                               </div>
+                               <button class="button rounded-0 primary-bg text-white w-100 btn_2" type="submit">Buscar</button>
+                            </form>
+                         </aside>
+                         <aside class="single_sidebar_widget search_widget">
+                            <form action="/busqueda" method='POST'>
+                               <div class="form-group">
+                                  <div class="input-group mb-3">
+                                     <input type="text" name="coctel" class="form-control" placeholder='Buscar coctel'
+                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
+                                     <div class="input-group-append">
+                                        <button class="btn" type="button"><i class="ti-search"></i></button>
+                                     </div>
+                                  </div>
+                               </div>
+                               <button class="button rounded-0 primary-bg text-white w-100 btn_2" type="submit">Buscar</button>
+                            </form>
+                         </aside>
+                         <aside class="single_sidebar_widget popular_post_widget">
+                            <h3 class="widget_title">Recomendaciones</h3>
+                                {% for i in listarandom %}
+                                    <div class="media post_item">
+                                        <img src="../static/img/elements/primary-radio.png" alt="post">
+                                        <div class="media-body">
+                                            <a href="/coctel/{{ i[0]['idDrink'] }}">
+                                                <h3>{{ i[0]['strDrink'] }}</h3>
+                                            </a>
+                                            </form>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+	 
+{% endblock %}
+
+
+

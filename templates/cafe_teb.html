@@ -1,0 +1,21 @@
+{% extends "cafe_te.html" %}
+{% block resultados %}
+<div class="row justify-content-center">
+        <div class="sibscribe-text text-center">
+            <div class="blog_details">
+                <h1>Resultados </h1>
+                    {% for i in resultadoscyt %}
+                    <div class="single_offer_part">
+                            <div class="single_offer">
+                                <img src="{{ i['strDrinkThumb'] }}" alt="offer_img_1">
+                                <div class="hover_text">
+                                    <h2>{{ i['strDrink'] }}</h2>
+                                    <a href="/coctel/{{ i['idDrink'] }}" class="offer_btn"><span class="flaticon-slim-right"></span></a>
+                                </div>
+                            </div>
+                        </div>  
+                    {% endfor %}               
+            </div>
+        </div>
+    </div>
+{% endblock %}
