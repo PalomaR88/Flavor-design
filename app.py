@@ -75,81 +75,14 @@ def infococ(id):
 def ingcoc(listacoc):
         listaing=[]
         listap=[]
-        if listacoc[0]['strIngredient1']!='' and listacoc[0]['strIngredient1']!=None:
-                listap.append(listacoc[0]['strIngredient1'])
-                listap.append(listacoc[0]['strMeasure1'])
-                listaing.append(listap)
-                listap=[]
-        if listacoc[0]['strIngredient2']!='' and listacoc[0]['strIngredient2']!=None:
-                listap.append(listacoc[0]['strIngredient2'])
-                listap.append(listacoc[0]['strMeasure2'])
-                listaing.append(listap)
-                listap=[]
-        if listacoc[0]['strIngredient3']!='' and listacoc[0]['strIngredient3']!=None:
-                listap.append(listacoc[0]['strIngredient3'])
-                listap.append(listacoc[0]['strMeasure3'])
-                listaing.append(listap)
-                listap=[]
-        if listacoc[0]['strIngredient4']!='' and listacoc[0]['strIngredient4']!=None:
-                listap.append(listacoc[0]['strIngredient4'])
-                listap.append(listacoc[0]['strMeasure4'])
-                listaing.append(listap)
-                listap=[]  
-        if listacoc[0]['strIngredient5']!='' and listacoc[0]['strIngredient5']!=None:
-                listap.append(listacoc[0]['strIngredient5'])
-                listap.append(listacoc[0]['strMeasure5'])
-                listaing.append(listap)
-                listap=[]
-        if listacoc[0]['strIngredient6']!='' and listacoc[0]['strIngredient6']!=None:
-                listap.append(listacoc[0]['strIngredient6'])
-                listap.append(listacoc[0]['strMeasure6'])
-                listaing.append(listap)
-                listap=[]
-        if listacoc[0]['strIngredient7']!='' and listacoc[0]['strIngredient7']!=None:
-                listap.append(listacoc[0]['strIngredient7'])
-                listap.append(listacoc[0]['strMeasure7'])
-                listaing.append(listap)
-                listap=[]
-        if listacoc[0]['strIngredient8']!='' and listacoc[0]['strIngredient8']!=None:
-                listap.append(listacoc[0]['strIngredient8'])
-                listap.append(listacoc[0]['strMeasure8'])
-                listaing.append(listap)
-                listap=[]
-        if listacoc[0]['strIngredient9']!='' and listacoc[0]['strIngredient9']!=None:
-                listap.append(listacoc[0]['strIngredient9'])
-                listap.append(listacoc[0]['strMeasure9'])
-                listaing.append(listap)
-                listap=[]
-        if listacoc[0]['strIngredient10']!='' and listacoc[0]['strIngredient10']!=None:
-                listap.append(listacoc[0]['strIngredient10'])
-                listap.append(listacoc[0]['strMeasure10'])
-                listaing.append(listap)
-                listap=[]
-        if listacoc[0]['strIngredient11']!='' and listacoc[0]['strIngredient11']!=None:
-                listap.append(listacoc[0]['strIngredient11'])
-                listap.append(listacoc[0]['strMeasure11'])
-                listaing.append(listap)
-                listap=[]
-        if listacoc[0]['strIngredient12']!='' and listacoc[0]['strIngredient12']!=None:
-                listap.append(listacoc[0]['strIngredient12'])
-                listap.append(listacoc[0]['strMeasure12'])
-                listaing.append(listap)
-                listap=[]
-        if listacoc[0]['strIngredient13']!='' and listacoc[0]['strIngredient13']!=None:
-                listap.append(listacoc[0]['strIngredient13'])
-                listap.append(listacoc[0]['strMeasure13'])
-                listaing.append(listap)
-                listap=[]
-        if listacoc[0]['strIngredient14']!='' and listacoc[0]['strIngredient14']!=None:
-                listap.append(listacoc[0]['strIngredient14'])
-                listap.append(listacoc[0]['strMeasure14'])
-                listaing.append(listap)
-                listap=[]
-        if listacoc[0]['strIngredient15']!='' and listacoc[0]['strIngredient15']!=None:
-                listap.append(listacoc[0]['strIngredient15'])
-                listap.append(listacoc[0]['strMeasure15'])
-                listaing.append(listap)
-                listap=[]
+        
+        for i in range(1,16):
+                if listacoc[0]['strIngredient'+str(i)]!='' and listacoc[0]['strIngredient'+str(i)]!=None:
+                        listap.append(listacoc[0]['strIngredient'+str(i)])
+                        listap.append(listacoc[0]['strMeasure'+str(i)])
+                        listaing.append(listap)
+                        listap=[]
+        
         print(listaing)
         return listaing
 

@@ -73,20 +73,6 @@
                                <button class="button rounded-0 primary-bg text-white w-100 btn_2" type="submit">Buscar</button>
                             </form>
                          </aside>
-                         <aside class="single_sidebar_widget search_widget">
-                            <form action="/busqueda" method='POST'>
-                               <div class="form-group">
-                                  <div class="input-group mb-3">
-                                     <input type="text" name="coctel" class="form-control" placeholder='Buscar coctel'
-                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
-                                     <div class="input-group-append">
-                                        <button class="btn" type="button"><i class="ti-search"></i></button>
-                                     </div>
-                                  </div>
-                               </div>
-                               <button class="button rounded-0 primary-bg text-white w-100 btn_2" type="submit">Buscar</button>
-                            </form>
-                         </aside>
                          <aside class="single_sidebar_widget popular_post_widget">
                             <h3 class="widget_title">Recomendaciones</h3>
                                 {% for i in listarandom %}
