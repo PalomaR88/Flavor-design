@@ -243,10 +243,15 @@ def ingrediente(nombre):
 
 @app.route('/cocteles' ,methods=["GET","POST"])
 def coctelel():
-    if request.method == 'GET':
-        coc=cocteles()
-        cocrandom=aleatorio()
-        return render_template("cocteles.html", coc=coc, cocrandom=cocrandom)
+        if request.method == 'GET':
+                coc=cocteles()
+                cocrandom=aleatorio()
+                listacafeyte=cafeyte()
+                listasinalcohol=bebidasnoalcoholicas()
+                return render_template("cocteles.html", coc=coc, cocrandom=cocrandom, listacafeyte=listacafeyte, listasinalcohol=listasinalcohol)
+
+
+
 
 @app.route('/coctel/<id>')
 def coctel(id):
